@@ -15,7 +15,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="400.0" styleClass="background" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simple_calculator.HelloController">
    <children>
-      <TextField alignment="CENTER_RIGHT" layoutX="13.0" layoutY="14.0" prefHeight="110.0" prefWidth="374.0" promptText="00000000000" style="-fx-background-color: #ee00ff; -fx-background-radius: 10;">
+      <TextField fx:id="view" alignment="CENTER_RIGHT" layoutX="13.0" layoutY="14.0" prefHeight="110.0" prefWidth="374.0" promptText="00000000000" style="-fx-background-color: #ee00ff; -fx-background-radius: 10;">
          <font>
             <Font name="System Bold" size="48.0" />
          </font>
@@ -52,7 +52,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" prefHeight="96.0" prefWidth="138.0" style="-fx-background-radius: 20;" text="C">
+            <Button fx:id="Clear" mnemonicParsing="false" prefHeight="96.0" prefWidth="138.0" style="-fx-background-radius: 20;" text="C">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
@@ -71,7 +71,7 @@
                   </Lighting>
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="106.0" style="-fx-background-radius: 20;" text="\%" GridPane.columnIndex="1">
+            <Button fx:id="precentage" mnemonicParsing="false" prefHeight="79.0" prefWidth="106.0" style="-fx-background-radius: 20;" text="\%" GridPane.columnIndex="1">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
@@ -90,7 +90,7 @@
                   </Lighting>
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="102.0" style="-fx-background-radius: 20;" text="^" GridPane.columnIndex="2">
+            <Button fx:id="power" mnemonicParsing="false" prefHeight="80.0" prefWidth="102.0" style="-fx-background-radius: 20;" text="^" GridPane.columnIndex="2">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
@@ -109,7 +109,7 @@
                   </Lighting>
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="85.0" prefWidth="100.0" style="-fx-background-radius: 20;" text="/" GridPane.columnIndex="3">
+            <Button fx:id="div" mnemonicParsing="false" prefHeight="85.0" prefWidth="100.0" style="-fx-background-radius: 20;" text="/" GridPane.columnIndex="3">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
@@ -128,7 +128,7 @@
                   </Lighting>
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="88.0" prefWidth="103.0" style="-fx-background-radius: 20;" text="7" GridPane.rowIndex="1">
+            <Button fx:id="seven" mnemonicParsing="false" prefHeight="88.0" prefWidth="103.0" style="-fx-background-radius: 20;" text="7" GridPane.rowIndex="1">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
@@ -143,7 +143,7 @@
                   </Lighting>
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="91.0" prefWidth="103.0" style="-fx-background-radius: 20;" text="8" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button fx:id="eight" mnemonicParsing="false" prefHeight="91.0" prefWidth="103.0" style="-fx-background-radius: 20;" text="8" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
@@ -158,7 +158,7 @@
                   </Lighting>
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="94.0" prefWidth="108.0" style="-fx-background-radius: 20;" text="9" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Button fx:id="nine" mnemonicParsing="false" prefHeight="94.0" prefWidth="108.0" style="-fx-background-radius: 20;" text="9" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
@@ -173,7 +173,7 @@
                   </Lighting>
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="93.0" prefWidth="114.0" style="-fx-background-radius: 20;" text="*" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <Button fx:id="mul" mnemonicParsing="false" prefHeight="93.0" prefWidth="114.0" style="-fx-background-radius: 20;" text="*" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
@@ -192,7 +192,7 @@
                   </Lighting>
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="101.0" prefWidth="131.0" style="-fx-background-radius: 20;" text="4" GridPane.rowIndex="2">
+            <Button fx:id="four" mnemonicParsing="false" onAction="#four4" prefHeight="101.0" prefWidth="131.0" style="-fx-background-radius: 20;" text="4" GridPane.rowIndex="2">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
@@ -207,7 +207,7 @@
                   </Lighting>
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="120.0" prefWidth="122.0" style="-fx-background-radius: 20;" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button fx:id="five" mnemonicParsing="false" onAction="#five5" prefHeight="120.0" prefWidth="122.0" style="-fx-background-radius: 20;" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
@@ -222,7 +222,7 @@
                   </Lighting>
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="126.0" prefWidth="111.0" style="-fx-background-radius: 20;" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <Button fx:id="six" mnemonicParsing="false" onAction="#six6" prefHeight="126.0" prefWidth="111.0" style="-fx-background-radius: 20;" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
@@ -237,7 +237,7 @@
                   </Lighting>
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="133.0" prefWidth="111.0" style="-fx-background-radius: 20;" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <Button fx:id="sbt" mnemonicParsing="false" prefHeight="133.0" prefWidth="111.0" style="-fx-background-radius: 20;" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
@@ -256,7 +256,7 @@
                   </Lighting>
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="146.0" prefWidth="126.0" style="-fx-background-radius: 20;" text="1" GridPane.rowIndex="3">
+            <Button fx:id="one" mnemonicParsing="false" onAction="#One1" prefHeight="146.0" prefWidth="126.0" style="-fx-background-radius: 20;" text="1" GridPane.rowIndex="3">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
@@ -271,7 +271,7 @@
                   </Lighting>
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="104.0" prefWidth="122.0" style="-fx-background-radius: 20;" text="0" GridPane.rowIndex="4">
+            <Button fx:id="zero" mnemonicParsing="false" prefHeight="104.0" prefWidth="122.0" style="-fx-background-radius: 20;" text="0" GridPane.rowIndex="4">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
@@ -286,7 +286,7 @@
                   </Lighting>
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="125.0" style="-fx-background-radius: 20;" text="2" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Button fx:id="two" mnemonicParsing="false" onAction="#two2" prefHeight="124.0" prefWidth="125.0" style="-fx-background-radius: 20;" text="2" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
@@ -301,7 +301,7 @@
                   </Lighting>
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="107.0" prefWidth="118.0" style="-fx-background-radius: 20;" text="00" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Button fx:id="zerozero" mnemonicParsing="false" prefHeight="107.0" prefWidth="118.0" style="-fx-background-radius: 20;" text="00" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
@@ -316,7 +316,7 @@
                   </Lighting>
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="128.0" prefWidth="129.0" style="-fx-background-radius: 20;" text="3" GridPane.columnIndex="2" GridPane.rowIndex="3">
+            <Button fx:id="three" mnemonicParsing="false" onAction="#tree3" prefHeight="128.0" prefWidth="129.0" style="-fx-background-radius: 20;" text="3" GridPane.columnIndex="2" GridPane.rowIndex="3">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
@@ -331,7 +331,7 @@
                   </Lighting>
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="109.0" prefWidth="135.0" style="-fx-background-radius: 20;" text="." GridPane.columnIndex="2" GridPane.rowIndex="4">
+            <Button fx:id="decimalpoint" mnemonicParsing="false" prefHeight="109.0" prefWidth="135.0" style="-fx-background-radius: 20;" text="." GridPane.columnIndex="2" GridPane.rowIndex="4">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
@@ -346,7 +346,7 @@
                   </Lighting>
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="122.0" prefWidth="112.0" style="-fx-background-radius: 20;" text="+" GridPane.columnIndex="3" GridPane.rowIndex="3">
+            <Button fx:id="add" mnemonicParsing="false" prefHeight="122.0" prefWidth="112.0" style="-fx-background-radius: 20;" text="+" GridPane.columnIndex="3" GridPane.rowIndex="3">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
@@ -365,7 +365,7 @@
                   </Lighting>
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="162.0" prefWidth="130.0" style="-fx-background-radius: 20;" text="=" GridPane.columnIndex="3" GridPane.rowIndex="4">
+            <Button fx:id="equal" mnemonicParsing="false" prefHeight="162.0" prefWidth="130.0" style="-fx-background-radius: 20;" text="=" GridPane.columnIndex="3" GridPane.rowIndex="4">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
